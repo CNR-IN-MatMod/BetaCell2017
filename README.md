@@ -41,16 +41,16 @@ Simulink file | Description | Figure
 
 **Remarks:**
 
-* The functions `fCa.m` and `fCaGlu.m` complement the Simulink model `betavars.mdl`, representing fk and fr.
+* The functions `fCa.m` and `fCaGlu.m` complement the Simulink model `betavars.mdl`, representing f<sub>k</sub> and f<sub>r</sub>.
 
 * The Simulink model `betavars.mdl` provides insulin secretion, the IRP and refilling (*S(t)*, *Q(t)* and *r(t)* in the article).
 
-* The full calcium model is implemented in `casim.m`, where the static component Cs(G) (function `glu2ca.m`) is used.
+* The full calcium model is implemented in `casim.m`, where the static component C<sub>s</sub>(G) (function `glu2ca.m`) is used.
 
 
 ## Dataset and parameters
 
-The data (glucose concentration, calcium concentration and insulin secretion) are stored in mat files named as shown in the tables below. The data file also stores the model parameters (as a vector p) appropriate for the data.
+The data (glucose concentration, calcium concentration and insulin secretion) are stored in mat files named as shown in the tables below. The data file also stores the model parameters (as a vector `p`) appropriate for the data.
 
 ### In vitro tests
 
