@@ -1,16 +1,16 @@
 Model {
   Name			  "betavars"
-  Version		  7.6
+  Version		  8.0
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    4
     Inport {
       BusObject		      ""
-      Name		      "G"
+      Name		      "Glucose"
     }
     Inport {
       BusObject		      ""
-      Name		      "C"
+      Name		      "Calcium"
     }
     Inport {
       BusObject		      ""
@@ -24,36 +24,32 @@ Model {
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      Name		      "Glu"
+      Name		      "G"
     }
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      Name		      "Ca"
+      Name		      "C"
     }
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      SignalName	      "ISRx"
-      Name		      "ISR"
+      Name		      "S"
     }
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      SignalName	      "R"
-      Name		      "pool"
+      Name		      "Q"
     }
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      SignalName	      "phi_n"
-      Name		      "refilling"
+      Name		      "r"
     }
     Outport {
       BusObject		      ""
       BusOutputAsStruct	      "off"
-      SignalName	      "Cx"
-      Name		      "fCa"
+      Name		      "k"
     }
     Outport {
       BusObject		      ""
@@ -61,7 +57,7 @@ Model {
       Name		      "fCaGlu"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.253"
+    ComputedModelVersion    "1.255"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -74,16 +70,56 @@ Model {
   DataTypeOverrideAppliesTo "AllNumericTypes"
   MinMaxOverflowLogging	  "UseLocalSettings"
   MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [233.0, 74.0, 993.0, 804.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[8]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[941.0, 628.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, 0.0]
+      }
+    }
+  }
   Created		  "Fri Aug 10 13:33:55 2007"
   Creator		  "Valentina"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "eleonora"
+  LastModifiedBy	  "Andrea Mari"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Mar  2 12:13:44 2017"
-  RTWModifiedTimeStamp	  410357236
-  ModelVersionFormat	  "1.%<AutoIncrement:253>"
+  LastModifiedDate	  "Thu Mar 09 09:02:36 2017"
+  RTWModifiedTimeStamp	  410950881
+  ModelVersionFormat	  "1.%<AutoIncrement:255>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -91,6 +127,7 @@ Model {
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
+  ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
   ShowStorageClass	  off
@@ -115,6 +152,24 @@ Model {
   AccelTemplateMakefile	  "accel_default_tmf"
   AccelMakeCommand	  "make_rtw"
   TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    6
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "betavars"
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "betavars"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      ""
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
   RecordCoverage	  off
   CovPath		  "/"
   CovSaveName		  "covdata"
@@ -157,14 +212,14 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      1
-      Version		      "1.10.0"
+      $ObjectID		      7
+      Version		      "1.12.1"
       Array {
 	Type			"Handle"
 	Dimension		8
 	Simulink.SolverCC {
-	  $ObjectID		  2
-	  Version		  "1.10.0"
+	  $ObjectID		  8
+	  Version		  "1.12.1"
 	  StartTime		  "0"
 	  StopTime		  "100"
 	  AbsTol		  "1e-5"
@@ -182,6 +237,7 @@ Model {
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-4"
 	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
 	  Solver		  "ode15s"
 	  SolverName		  "ode15s"
@@ -197,8 +253,8 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  3
-	  Version		  "1.10.0"
+	  $ObjectID		  9
+	  Version		  "1.12.1"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -210,6 +266,7 @@ Model {
 	  SaveFinalState	  off
 	  SaveCompleteFinalSimState off
 	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
 	  SaveOutput		  off
 	  SaveState		  off
 	  SignalLogging		  off
@@ -228,8 +285,8 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  4
-	  Version		  "1.10.0"
+	  $ObjectID		  10
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    4
@@ -244,6 +301,7 @@ Model {
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
+	  UseFloatMulNetSlope	  off
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
@@ -276,10 +334,11 @@ Model {
 	  BufferReusableBoundary  on
 	  SimCompilerOptimization "Off"
 	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  5
-	  Version		  "1.10.0"
+	  $ObjectID		  11
+	  Version		  "1.12.1"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -328,12 +387,13 @@ Model {
 	  UnnecessaryDatatypeConvMsg "none"
 	  VectorMatrixConversionMsg "none"
 	  InvalidFcnCallConnMsg	  "error"
-	  FcnCallInpInsideContextMsg "Use local settings"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
 	  SignalLabelMismatchMsg  "none"
 	  UnconnectedInputMsg	  "warning"
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -350,6 +410,7 @@ Model {
 	  ModelReferenceExtraNoncontSigs "error"
 	  StateNameClashWarn	  "warning"
 	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
 	  InitInArrayFormatMsg	  "warning"
 	  StrictBusMsg		  "Warning"
 	  BusNameAdapt		  "WarnAndRepair"
@@ -361,10 +422,13 @@ Model {
 	  SFInvalidInputDataAccessInChartInitDiag "warning"
 	  SFNoUnconditionalDefaultTransitionDiag "warning"
 	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  6
-	  Version		  "1.10.0"
+	  $ObjectID		  12
+	  Version		  "1.12.1"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -400,8 +464,8 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  7
-	  Version		  "1.10.0"
+	  $ObjectID		  13
+	  Version		  "1.12.1"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
@@ -415,8 +479,8 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  8
-	  Version		  "1.10.0"
+	  $ObjectID		  14
+	  Version		  "1.12.1"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
@@ -430,8 +494,8 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  9
-	  Version		  "1.10.0"
+	  $ObjectID		  15
+	  Version		  "1.12.1"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    1
@@ -442,6 +506,7 @@ Model {
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
 	  TemplateMakefile	  "grt_default_tmf"
 	  GenerateReport	  off
 	  SaveLog		  off
@@ -458,6 +523,13 @@ Model {
 	  RTWUseSimCustomCode	  off
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
 	  IncludeERTFirstTime	  on
@@ -467,7 +539,9 @@ Model {
 	  GenerateTraceReportSf	  off
 	  GenerateTraceReportEml  off
 	  GenerateCodeInfo	  off
-	  GenerateSLWebview	  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
 	  RTWCompilerOptimization "Off"
 	  CheckMdlBeforeBuild	  "Off"
 	  CustomRebuildMode	  "OnUpdate"
@@ -475,8 +549,8 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      10
-	      Version		      "1.10.0"
+	      $ObjectID		      16
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		16
@@ -507,6 +581,7 @@ Model {
 	      PreserveName	      off
 	      PreserveNameWithParent  off
 	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
 	      IncAutoGenComments      off
 	      SimulinkDataObjDesc     off
 	      SFDataObjDesc	      off
@@ -529,14 +604,15 @@ Model {
 	      SimulinkBlockComments   on
 	      MATLABSourceComments    off
 	      EnableCustomComments    off
+	      InternalIdentifier      "Classic"
 	      InlinedPrmAccess	      "Literals"
 	      ReqsInCode	      off
 	      UseSimReservedNames     off
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      11
-	      Version		      "1.10.0"
+	      $ObjectID		      17
+	      Version		      "1.12.1"
 	      Array {
 		Type			"Cell"
 		Dimension		12
@@ -557,10 +633,9 @@ Model {
 	      TargetFcnLib	      "ansi_tfl_tmw.mat"
 	      TargetLibSuffix	      ""
 	      TargetPreCompLibLocation ""
-	      TargetFunctionLibrary   "ANSI_C"
+	      CodeReplacementLibrary  "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
-	      ERTCodeCoverageTool     "None"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
@@ -570,6 +645,7 @@ Model {
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
 	      IncludeMdlTerminateFcn  on
 	      GeneratePreprocessorConditionals "Disable all"
 	      CombineOutputUpdateFcns off
@@ -590,10 +666,10 @@ Model {
 	      SupportVariableSizeSignals off
 	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      PortableWordSizes	      off
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
+	      GRTInterface	      on
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -605,6 +681,7 @@ Model {
 	      RTWCAPISignals	      off
 	      RTWCAPIParams	      off
 	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
 	      GenerateASAP2	      off
 	    }
 	    PropName		    "Components"
@@ -614,14 +691,25 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition    " [ 200, 74, 1080, 704 ] "
+      ConfigPrmDlgPosition     [ 200, 74, 1080, 704 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    1
+    $ObjectID		    7
   }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    18
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
   BlockDefaults {
     ForegroundColor	    "black"
     BackgroundColor	    "white"
@@ -653,6 +741,25 @@ Model {
     FontWeight		    "normal"
     FontAngle		    "normal"
   }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "on"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
   BlockParameterDefaults {
     Block {
       BlockType		      Gain
@@ -672,6 +779,7 @@ Model {
     Block {
       BlockType		      Inport
       Port		      "1"
+      OutputFunctionCall      off
       OutMin		      "[]"
       OutMax		      "[]"
       OutDataTypeStr	      "Inherit: auto"
@@ -761,7 +869,7 @@ Model {
   }
   System {
     Name		    "betavars"
-    Location		    [263, 186, 1200, 806]
+    Location		    [233, 74, 1226, 878]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -775,19 +883,21 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "22"
+    SIDHighWatermark	    "25"
     Block {
       BlockType		      Inport
-      Name		      "G"
+      Name		      "Glucose"
       SID		      "1"
       Position		      [150, 38, 180, 52]
+      ZOrder		      -1
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Inport
-      Name		      "C"
+      Name		      "Calcium"
       SID		      "2"
       Position		      [150, 73, 180, 87]
+      ZOrder		      -2
       Port		      "2"
       IconDisplay	      "Port number"
     }
@@ -796,6 +906,7 @@ Model {
       Name		      "fr"
       SID		      "3"
       Position		      [30, 208, 60, 222]
+      ZOrder		      -3
       Port		      "3"
       IconDisplay	      "Port number"
     }
@@ -804,58 +915,34 @@ Model {
       Name		      "fk"
       SID		      "4"
       Position		      [115, 113, 145, 127]
+      ZOrder		      -4
       Port		      "4"
       IconDisplay	      "Port number"
     }
     Block {
+      BlockType		      Integrator
+      Name		      "IRP"
+      SID		      "7"
+      Ports		      [1, 1]
+      Position		      [400, 199, 430, 231]
+      ZOrder		      -7
+      ForegroundColor	      "magenta"
+      BackgroundColor	      "yellow"
+      InitialCondition	      "CaGlu0/Ca0"
+    }
+    Block {
       BlockType		      Product
-      Name		      "ISR=RC"
+      Name		      "S=kQ"
       SID		      "5"
       Ports		      [2, 1]
       Position		      [370, 267, 400, 298]
+      ZOrder		      -5
       BlockMirror	      on
       ForegroundColor	      "cyan"
       BackgroundColor	      "yellow"
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
-      Port {
-	PortNumber		1
-	Name			"ISRx"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "Integrator"
-      SID		      "6"
-      Ports		      [1, 1]
-      Position		      [230, 200, 260, 230]
-      BackgroundColor	      "orange"
-      InitialCondition	      "CaGlu0"
-      Port {
-	PortNumber		1
-	Name			"phi_n"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
-    }
-    Block {
-      BlockType		      Integrator
-      Name		      "R"
-      SID		      "7"
-      Ports		      [1, 1]
-      Position		      [400, 199, 430, 231]
-      ForegroundColor	      "magenta"
-      BackgroundColor	      "yellow"
-      InitialCondition	      "CaGlu0/Ca0"
-      Port {
-	PortNumber		1
-	Name			"R"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
     }
     Block {
       BlockType		      Sum
@@ -863,6 +950,7 @@ Model {
       SID		      "8"
       Ports		      [2, 1]
       Position		      [145, 205, 165, 225]
+      ZOrder		      -8
       BackgroundColor	      "orange"
       ShowName		      off
       IconShape		      "round"
@@ -876,6 +964,7 @@ Model {
       SID		      "9"
       Ports		      [2, 1]
       Position		      [340, 205, 360, 225]
+      ZOrder		      -9
       ForegroundColor	      "blue"
       BackgroundColor	      "yellow"
       ShowName		      off
@@ -891,6 +980,7 @@ Model {
       SID		      "10"
       Ports		      [2, 1]
       Position		      [370, 110, 390, 130]
+      ZOrder		      -10
       ForegroundColor	      "blue"
       ShowName		      off
       IconShape		      "round"
@@ -901,9 +991,10 @@ Model {
     }
     Block {
       BlockType		      Gain
-      Name		      "alphaC"
+      Name		      "alpha_k"
       SID		      "11"
       Position		      [435, 105, 465, 135]
+      ZOrder		      -11
       ForegroundColor	      "blue"
       BackgroundColor	      "yellow"
       Gain		      "alphaC"
@@ -913,98 +1004,106 @@ Model {
     }
     Block {
       BlockType		      Gain
-      Name		      "alphaP"
+      Name		      "alpha_r"
       SID		      "12"
       Position		      [180, 200, 210, 230]
+      ZOrder		      -12
       BackgroundColor	      "orange"
       Gain		      "alphaP"
-      Port {
-	PortNumber		1
-	Name			"gain"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
     }
     Block {
       BlockType		      Integrator
-      Name		      "calcio"
+      Name		      "delay_k"
       SID		      "13"
       Ports		      [1, 1]
       Position		      [495, 104, 525, 136]
+      ZOrder		      -13
       ForegroundColor	      "blue"
       BackgroundColor	      "yellow"
       InitialCondition	      "Ca0"
-      Port {
-	PortNumber		1
-	Name			"Cx"
-	RTWStorageClass		"Auto"
-	DataLoggingNameMode	"SignalName"
-      }
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "delay_r"
+      SID		      "6"
+      Ports		      [1, 1]
+      Position		      [230, 200, 260, 230]
+      ZOrder		      -6
+      BackgroundColor	      "orange"
+      InitialCondition	      "CaGlu0"
     }
     Block {
       BlockType		      TransportDelay
-      Name		      "delayC"
+      Name		      "tau_k"
       SID		      "14"
       Ports		      [1, 1]
       Position		      [260, 105, 290, 135]
+      ZOrder		      -14
       BackgroundColor	      "orange"
       DelayTime		      "delayC"
       InitialOutput	      "Ca0"
     }
     Block {
       BlockType		      TransportDelay
-      Name		      "delayP"
+      Name		      "tau_r"
       SID		      "15"
       Ports		      [1, 1]
       Position		      [95, 200, 125, 230]
+      ZOrder		      -15
       BackgroundColor	      "orange"
       DelayTime		      "delayP"
       InitialOutput	      "CaGlu0"
     }
     Block {
       BlockType		      Outport
-      Name		      "Glu"
+      Name		      "G"
       SID		      "16"
       Position		      [650, 38, 680, 52]
+      ZOrder		      -16
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
-      Name		      "Ca"
+      Name		      "C"
       SID		      "17"
       Position		      [650, 73, 680, 87]
+      ZOrder		      -17
       Port		      "2"
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
-      Name		      "ISR"
+      Name		      "S"
       SID		      "18"
       Position		      [655, 243, 685, 257]
+      ZOrder		      -18
       Port		      "3"
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
-      Name		      "pool"
+      Name		      "Q"
       SID		      "19"
       Position		      [655, 208, 685, 222]
+      ZOrder		      -19
       Port		      "4"
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
-      Name		      "refilling"
+      Name		      "r"
       SID		      "20"
       Position		      [655, 308, 685, 322]
+      ZOrder		      -20
       Port		      "5"
       IconDisplay	      "Port number"
     }
     Block {
       BlockType		      Outport
-      Name		      "fCa"
+      Name		      "k"
       SID		      "21"
       Position		      [650, 113, 680, 127]
+      ZOrder		      -21
       Port		      "6"
       IconDisplay	      "Port number"
     }
@@ -1013,30 +1112,28 @@ Model {
       Name		      "fCaGlu"
       SID		      "22"
       Position		      [655, 343, 685, 357]
+      ZOrder		      -22
       Port		      "7"
       IconDisplay	      "Port number"
     }
     Line {
-      Name		      "phi_n"
-      Labels		      [0, 0]
-      SrcBlock		      "Integrator"
+      SrcBlock		      "delay_r"
       SrcPort		      1
-      Points		      [10, 0]
+      Points		      [0, 0]
       Branch {
 	DstBlock		"Sum7"
 	DstPort			1
       }
       Branch {
-	Points			[-10, 0; 0, 45; -95, 0]
+	Points			[0, 45; -95, 0]
 	Branch {
 	  Points		  [-15, 0]
 	  DstBlock		  "Sum2"
 	  DstPort		  2
 	}
 	Branch {
-	  Labels		  [0, 0; 0, 0; 0, 0; 1, 0]
 	  Points		  [0, 55]
-	  DstBlock		  "refilling"
+	  DstBlock		  "r"
 	  DstPort		  1
 	}
       }
@@ -1044,40 +1141,34 @@ Model {
     Line {
       SrcBlock		      "Sum2"
       SrcPort		      1
-      DstBlock		      "alphaP"
+      DstBlock		      "alpha_r"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "delayP"
+      SrcBlock		      "tau_r"
       SrcPort		      1
       DstBlock		      "Sum2"
       DstPort		      1
     }
     Line {
-      Name		      "gain"
-      Labels		      [0, 0]
-      SrcBlock		      "alphaP"
+      SrcBlock		      "alpha_r"
       SrcPort		      1
-      DstBlock		      "Integrator"
+      DstBlock		      "delay_r"
       DstPort		      1
     }
     Line {
-      Name		      "Cx"
-      Labels		      [0, 0]
-      SrcBlock		      "calcio"
+      SrcBlock		      "delay_k"
       SrcPort		      1
       Points		      [20, 0]
       Branch {
-	Labels			[1, 0]
 	Points			[30, 0]
 	Branch {
 	  Points		  [0, 170]
-	  DstBlock		  "ISR=RC"
+	  DstBlock		  "S=kQ"
 	  DstPort		  2
 	}
 	Branch {
-	  Labels		  [0, 0; 1, 0]
-	  DstBlock		  "fCa"
+	  DstBlock		  "k"
 	  DstPort		  1
 	}
       }
@@ -1090,70 +1181,64 @@ Model {
     Line {
       SrcBlock		      "Sum7"
       SrcPort		      1
-      DstBlock		      "R"
+      DstBlock		      "IRP"
       DstPort		      1
     }
     Line {
-      Name		      "R"
-      Labels		      [0, 0]
-      SrcBlock		      "R"
+      SrcBlock		      "IRP"
       SrcPort		      1
       Points		      [20, 0]
       Branch {
 	Points			[0, 60]
-	DstBlock		"ISR=RC"
+	DstBlock		"S=kQ"
 	DstPort			1
       }
       Branch {
-	Labels			[0, 0; 1, 0]
-	DstBlock		"pool"
+	DstBlock		"Q"
 	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "alphaC"
+      SrcBlock		      "alpha_k"
       SrcPort		      1
-      DstBlock		      "calcio"
+      DstBlock		      "delay_k"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Sum9"
       SrcPort		      1
-      DstBlock		      "alphaC"
+      DstBlock		      "alpha_k"
       DstPort		      1
     }
     Line {
-      Name		      "ISRx"
-      Labels		      [0, 0]
-      SrcBlock		      "ISR=RC"
+      SrcBlock		      "S=kQ"
       SrcPort		      1
-      Points		      [-15, 0; 0, -30]
+      Points		      [-15, 0; 0, -35]
       Branch {
 	DstBlock		"Sum7"
 	DstPort			2
       }
       Branch {
-	Points			[0, -5]
-	DstBlock		"ISR"
+	DstBlock		"S"
 	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "delayC"
+      SrcBlock		      "tau_k"
       SrcPort		      1
       DstBlock		      "Sum9"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "G"
+      SrcBlock		      "Glucose"
       SrcPort		      1
-      DstBlock		      "Glu"
+      DstBlock		      "G"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "C"
+      SrcBlock		      "Calcium"
       SrcPort		      1
-      DstBlock		      "Ca"
+      DstBlock		      "C"
       DstPort		      1
     }
     Line {
@@ -1167,27 +1252,20 @@ Model {
 	DstPort			1
       }
       Branch {
-	DstBlock		"delayP"
+	DstBlock		"tau_r"
 	DstPort			1
       }
     }
     Line {
       SrcBlock		      "fk"
       SrcPort		      1
-      DstBlock		      "delayC"
+      DstBlock		      "tau_k"
       DstPort		      1
     }
     Annotation {
+      SID		      "23"
       Name		      "phi_n"
       Position		      [109, 205]
-    }
-    Annotation {
-      Name		      "R"
-      Position		      [423, 185]
-    }
-    Annotation {
-      Name		      "phi_n"
-      Position		      [578, 315]
     }
   }
 }
