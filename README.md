@@ -9,7 +9,7 @@ the article. The script produces the html file [betacell_model_sim.html](html/be
 
 This readme file shortly describes the Matlab functions and the Simulink model files and summarizes the data used in the simulations.
 
-The script has been tested with Matlab 2012b.
+The script has been tested with Matlab 2010b.
 
 
 

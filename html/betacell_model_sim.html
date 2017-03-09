@@ -6,7 +6,7 @@
    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>Code for the beta-cell insulin secretion model reproducing in vitro and in vivo conditions</title><meta name="generator" content="MATLAB 7.11"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-03-08"><meta name="DC.source" content="betacell_model_sim.m"><style type="text/css">
+      --><title>Code for the beta-cell insulin secretion model reproducing in vitro and in vivo conditions</title><meta name="generator" content="MATLAB 7.11"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-03-09"><meta name="DC.source" content="betacell_model_sim.m"><style type="text/css">
 
 body {
   background-color: white;
@@ -330,9 +330,10 @@ setAxes(-5, 90, 4, <span class="string">'Time (min)'</span>, 0, 600, 3, <span cl
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_07.png" alt=""> <h2>- IVGTT (Panel B left)<a name="12"></a></h2><p>Data from Mari, 1998</p><pre class="codeinput">clear <span class="string">all</span>
 
 <span class="comment">% load data</span>
@@ -365,9 +366,10 @@ setAxes(-5, 90, 4, <span class="string">'Time (min)'</span>, 0, 2000, 3, <span c
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_08.png" alt=""> <h2>- IVGTT T2D (Panel B right)<a name="13"></a></h2><p>Data from Mari, 1998</p><pre class="codeinput">clear <span class="string">all</span>
 
 <span class="comment">% load data</span>
@@ -400,9 +402,10 @@ setAxes(-5, 90, 4, <span class="string">'Time (min)'</span>, 0, 2000, 3, <span c
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_09.png" alt=""> <h2>- OGTT-like (Panel C left)<a name="14"></a></h2><p>Data from Muscelli et al., 2006</p><pre class="codeinput">clear <span class="string">all</span>
 
 <span class="comment">% load data</span>
@@ -436,9 +439,10 @@ setAxes(-5, 180, 7, <span class="string">'Time (min)'</span>, <span class="keywo
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_10.png" alt=""> <h2>- OGTT-like T2D (Panel C right)<a name="15"></a></h2><p>Data from Muscelli et al., 2006</p><pre class="codeinput">clear <span class="string">all</span>
 
 <span class="comment">% load data</span>
@@ -472,9 +476,10 @@ setAxes(-5, 180, 7, <span class="string">'Time (min)'</span>, <span class="keywo
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_11.png" alt=""> <h2>- Ramp glucose (Panel D left)<a name="16"></a></h2><p>Data from Seghieri et al., 2016</p><pre class="codeinput">clear <span class="string">all</span>
 
 <span class="comment">% load data</span>
@@ -507,9 +512,10 @@ setAxes(-5, 180, 7, <span class="string">'Time (min)'</span>, 0, 1500, 4, <span 
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_12.png" alt=""> <h2>-  Ramp glucose T2D (Panel D right)<a name="17"></a></h2><p>Data from Seghieri et al., 2016</p><pre class="codeinput">clear <span class="string">all</span>
 
 <span class="comment">% load data</span>
@@ -542,9 +548,10 @@ setAxes(-5, 180, 7, <span class="string">'Time (min)'</span>, 0, 1500, 4, <span 
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_13.png" alt=""> <h2>- Glucose hyperglycaemic clamp (Panel E left)<a name="18"></a></h2><p>Data from Mychaliszin et al., 2014</p><pre class="codeinput"><span class="comment">% load data</span>
 load <span class="string">Mychaliszin_2014_NGT</span>
 
@@ -575,9 +582,10 @@ setAxes(-5, 120, 5, <span class="string">'Time (min)'</span>, 0, 6000, 4, <span 
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_14.png" alt=""> <h2>- Glucose hyperglycaemic clamp T2D (Panel E right)<a name="19"></a></h2><p>Data from Mychaliszin et al., 2014</p><pre class="codeinput">clear <span class="string">all</span>
 
 <span class="comment">% load data</span>
@@ -610,9 +618,10 @@ setAxes(-5, 120, 5, <span class="string">'Time (min)'</span>, 0, 6000, 4, <span 
 
 
 <span class="comment">% saveas_ifsvg(gcf,'svg_human_all_test/panel_A.svg')</span>
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_15.png" alt=""> <h2>-  Loss of 1st phase secretion with fasting hyperglicemia - glucose clamp<a name="20"></a></h2><pre class="codeinput">clear <span class="string">all</span>
 
 glu(1).t=[0:1:5 5.02:0.2:6 6:0.5:50];
@@ -676,12 +685,14 @@ xlabel(<span class="string">'Time (min)'</span>)
 ylabel(<span class="string">'r (pmol min^{-1} m^{-2})'</span>)
 xlabel(<span class="string">'Time (min)'</span>)
 legend(<span class="string">'Basal normoglycemia'</span>,<span class="string">'Basal hyperglycemia'</span>)
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
-Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
+Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_16.png" alt=""> <h2>-  Loss of 1st phase secretion with fasting hyperglicemia - OGTT-like<a name="21"></a></h2><pre class="codeinput">clear <span class="string">all</span>
 
 load <span class="string">Muscelli_2006_NGT</span> <span class="comment">% load glucose data</span>
@@ -747,12 +758,14 @@ xlabel(<span class="string">'Time (min)'</span>)
 ylabel(<span class="string">'r (pmol min^{-1} m^{-2})'</span>)
 xlabel(<span class="string">'Time (min)'</span>)
 legend(<span class="string">'Basal normoglycemia'</span>,<span class="string">'Basal hyperglycemia'</span>)
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
-Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
+Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_17.png" alt=""> <h2>- Augmented AIR in insulin resistance with augmented basal secretion<a name="22"></a></h2><pre class="codeinput">clear <span class="string">all</span>
 
 [p,p_peak]=loadpar(<span class="string">'Toschi_2002_NGT'</span>); <span class="comment">% reference parameters</span>
@@ -814,13 +827,15 @@ plot(r(1).t, r(1).v/BSA,<span class="string">'k'</span>,r(2).t, r(2).v/BSA,<span
 xlabel(<span class="string">'Time (min)'</span>)
 ylabel(<span class="string">'r (pmol min^{-1} m^{-2})'</span>)
 xlabel(<span class="string">'Time (min)'</span>)
-legend(<span class="string">'Insulin sensitivity'</span>,<span class="string">'Insulin resistance'</span>)
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
-Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+legend(<span class="string">'Insulin sensitive'</span>,<span class="string">'Insulin resistant'</span>)
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
+Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_18.png" alt=""> <h2>- Glucose hyperglycaemic clamp calcium peak vs no calcium peak<a name="23"></a></h2><pre class="codeinput">clear <span class="string">all</span>
 
 [p,p_peak]=loadpar(<span class="string">'Toschi_2002_NGT'</span>); <span class="comment">% reference parameters</span>
@@ -871,12 +886,14 @@ xlabel(<span class="string">'Time (min)'</span>)
 ylabel(<span class="string">'S (pmol min^{-1} m^{-2})'</span>)
 xlabel(<span class="string">'Time (min)'</span>)
 legend(<span class="string">'Ca model with peak'</span>,<span class="string">'Ca model without peak'</span>)
-</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
-Warning: When delay time is set to zero, the transport delay block 'betavars/delayC' is
-automatically set to support direct feedthrough. This may cause an algebraic loop. A
-Memory Block can be used in place of the Transport Delay to break the loop 
+</pre><pre class="codeoutput">Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
+Warning: When delay time is set to zero, the transport delay block
+'betavars/tau_k' is automatically set to support direct
+feedthrough. This may cause an algebraic loop. A Memory Block can
+be used in place of the Transport Delay to break the loop 
 </pre><img vspace="5" hspace="5" src="betacell_model_sim_19.png" alt=""> <h2>- Dose response NGT vs T2D - parameters of glucose ramp<a name="24"></a></h2><pre class="codeinput">clear <span class="string">all</span>
 
 [p_ramp,p_peak]=loadpar(<span class="string">'Seghieri_2016_NGT'</span>); <span class="comment">% reference parameters NGT</span>
@@ -1748,7 +1765,7 @@ plot(r(1).t, r(1).v/BSA,'k',r(2).t, r(2).v/BSA,'r') % model secretion needs to b
 xlabel('Time (min)')
 ylabel('r (pmol min^{-1} m^{-2})')
 xlabel('Time (min)')
-legend('Insulin sensitivity','Insulin resistance')
+legend('Insulin sensitive','Insulin resistant')
 
 
 

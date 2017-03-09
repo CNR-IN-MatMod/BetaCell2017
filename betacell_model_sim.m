@@ -419,7 +419,7 @@ setAxes(-5, 90, 4, 'Time (min)', 0, 2000, 3, 'S (pmol min^{-1}m^{-2})') % genera
 
 %% - OGTT-like (Panel C left) 
 %
-% Data from Muscelli et al., 2006
+% Data from Muscelli et al., 2006; Muscelli et al. 2008
 clear all
 
 % load data
@@ -456,7 +456,7 @@ setAxes(-5, 180, 7, 'Time (min)', ...
 
 %% - OGTT-like T2D (Panel C right) 
 %
-% Data from Muscelli et al., 2006
+% Data from Muscelli et al., 2006; Muscelli et al. 2008
 clear all
 
 % load data
@@ -829,7 +829,7 @@ plot(r(1).t, r(1).v/BSA,'k',r(2).t, r(2).v/BSA,'r') % model secretion needs to b
 xlabel('Time (min)')
 ylabel('r (pmol min^{-1} m^{-2})')
 xlabel('Time (min)')
-legend('Insulin sensitivity','Insulin resistance')
+legend('Insulin sensitive','Insulin resistant')
 
 
 
