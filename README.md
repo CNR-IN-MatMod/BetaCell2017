@@ -17,9 +17,9 @@ The script has been tested with Matlab 2010b.
 
 Matlab file | Description
 ------------|------------
-`fCa.m` | Implements *f~k~* of the article
-`fCaGlu.m` | Implements *f~r~* of the article
-`glu2ca.m` | Implements *C~s~(G)* of the article
+`fCa.m` | Implements *f<sub>k</sub>* of the article
+`fCaGlu.m` | Implements *f<sub>r</sub>* of the article
+`glu2ca.m` | Implements *C<sub>s</sub>(G)* of the article
 `casim.m` | Calculates *C(t)* when it is not experimentally available
 `secsim.m` | Calculates *S(t)*, *Q(t)* and *r(t)* in the article
 `betasim.m` | Core wrapper for the main Simulink model betavars.mdl
