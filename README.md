@@ -5,7 +5,9 @@ model of the beta cell.
 
 The model is coded in Matlab and Simulink (both are required).
 The Matlab script `betacell_model_sim.m` reproduces the main figures of
-the article. The script produces the html file [betacell_model_sim.html](html/betacell_model_sim.html) with the Matlab Publish function.
+the article. The script produces the html file [betacell_model_sim.html](html/betacell_model_sim.html) 
+([preview](https://htmlpreview.github.io/?https://github.com/CNR-IN-MatMod/BetaCell2017/blob/master/html/betacell_model_sim.html))
+with the Matlab Publish function.
 
 This readme file shortly describes the Matlab functions and the Simulink model files and summarizes the data used in the simulations.
 
