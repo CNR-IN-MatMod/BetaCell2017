@@ -1,7 +1,10 @@
 # Beta Cell Model, Grespan-Mari, 2017
 
 This repository contains the code implementing Grespan-Mari's
-model of the beta cell.
+model of the beta cell described in the paper...
+
+> Grespan E, Giorgino T, Arslanian S, Natali A, Ferrannini E, Mari A. Defective Amplifying Pathway of β-Cell Secretory Response to Glucose in Type 2 Diabetes: Integrated Modeling of In Vitro and In Vivo Evidence. [Diabetes. 2018 Mar 1;67(3):496–506](http://diabetes.diabetesjournals.org/content/early/2017/12/08/db17-1039). 
+
 
 The model is coded in Matlab and Simulink (both are required).
 The Matlab script `betacell_model_sim.m` reproduces the main figures of
